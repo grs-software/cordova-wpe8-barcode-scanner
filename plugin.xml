@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+      id="de.grs-software.wpe8-barcode-scanner"
+      version="1.0.0">
+    <name>BarcodeScanner</name>
+    <description>BarcodeScanner plugin for Apache Cordova</description>
+    <license>BSD</license>
+    <keywords></keywords>
+    <repo></repo>
+    <issue></issue>
+
+    <js-module src="www/BarcodeScanner.js" name="BarcodeScanner">
+        <clobbers target="BarcodeScanner" />
+    </js-module>
+
+    <!-- wp8 -->
+    <platform name="wp8">
+        <config-file target="config.xml" parent="/*">
+            <feature name="BarcodeScanner">
+                <param name="wp-package" value="BarcodeScanner"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/wp/BarcodeScanner.cs" />
+        <framework src="lib/Windows.Devices.PointOfService.winmd" custom="true"/>
+    </platform>
+
+</plugin>
